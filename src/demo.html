@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="bouncy-page.css" />
+    <script src="jquery.js"></script>
+    <script src="bouncy-page.js"></script>
+</head>
+
+<body>
+    <div id="pager"></div>
+</body>
+
+</html>
+
+<script>
+    let pager = $("#pager");
+    let p = new BouncyPage("pager", fake, {
+
+        next: '下一页',
+        prev: '上一页',
+        first: '首页',
+        last: '尾页',
+        totalPageFormat: '共【{0}】页',
+        totalCountFormat: '共【{0}】条数据'
+    });
+    function fake(index){
+        console.log(index);
+        p.render(index,300)
+    }
+    fake(1);
+</script>
