@@ -38,8 +38,13 @@ class BouncyPage {
      * @memberof HappyPager
      */
     render(pageIndex, totalCount) {
+        
         pageIndex=Number.parseInt(pageIndex);
         totalCount=Number.parseInt(totalCount);
+        if(totalCount<1||pageIndex<1){
+            this.target.html("");
+            return;
+        }
         this.currentPage = pageIndex;
         this.target.html(this.createHtml(pageIndex, totalCount));
         this.bindClick(pageIndex, totalCount);

@@ -32,6 +32,7 @@
     background-color: #eee;
     border-color: #ddd;
     outline: 0;
+    text-decoration:none;
 }
 
 .pager a.active {
